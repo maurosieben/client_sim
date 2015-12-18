@@ -1,0 +1,14 @@
+
+To run the script you need to pass the number of clients you desire to simulate: 
+
+   usage: 
+
+   python client-gen.py X
+
+The clients will be created getting the ID's on id.csv. The limit of clients which can be created is the number of lines on the file. 
+
+To kill all clients just publish the following message: 
+   
+   mosquitto_pub -h "192.168.0.100" -t "lights" -m "kill"
+
+ 
