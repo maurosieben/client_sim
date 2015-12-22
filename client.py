@@ -18,7 +18,7 @@ def make_con():
 def on_connect(client, userdata, rc):
         print("\n[MQTT]Conectado ao Broker: 192.168.0.100\n")
         client.subscribe("lights/%s" %dev)
-        client.subscribe("lights/")
+        client.subscribe("lights")
 
 def on_message(client, userdata, msg):
         global dimmer
