@@ -32,7 +32,7 @@ def on_message(client, userdata, msg):
 def handle_msg(msg):
         if msg == 'R0001':
                  current = random.randrange(0, 2000, 1)
-                 client.publish("lights/%s/current" %dev, "C%dmA" %current)
+                 client.publish("lights/%s/current" %dev, "%dmA" %current)
 
         elif msg == 'R0002':
                 client.publish("lights/%s/pir" %dev, "PNATIVO")
@@ -42,14 +42,14 @@ def handle_msg(msg):
         
         elif msg == 'R0003':
                 ldr = random.randrange(0, 1000, 1)
-                client.publish("lights/%s/ldr" %dev, "L%d" %ldr)
+                client.publish("lights/%s/ldr" %dev, "%d" %ldr)
 
         elif msg == 'R0004':
                 temp = random.randrange(30, 50, 1)
-                client.publish("lights/%s/temperature" %dev, "T%d" %temp)
+                client.publish("lights/%s/temperature" %dev, "%d" %temp)
         
         elif msg == 'R0005':
-                client.publish("lights/%s/dimmer" %dev, "D%s" %dimmer)
+                client.publish("lights/%s/dimmer" %dev, "%s%%" %dimmer)
         
         elif msg == 'R0253':
                 client.publish("lights/%s/ip" %dev, "xx.xx.xx.xx")
